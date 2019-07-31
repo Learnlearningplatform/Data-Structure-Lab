@@ -1,0 +1,2 @@
+# Data Structure Lab
+ Data Structures laboratory is spacial. It provides a wide approach in C programming and enables to apply knowledge in Artificial Intelligence. Guidance’s are provided to the students by a team of faculty experts and lab programmer. The labs are kept open after the college hours to enable the students to engage themselves in getting practiced with Laboratory experiments in their leisure hours. The lab is used to train the students to improve their programming knowledge and make experiments to get familiar with the Core Courses.
