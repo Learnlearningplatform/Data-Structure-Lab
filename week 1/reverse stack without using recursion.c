@@ -1,5 +1,5 @@
 /*
- * C Program to Reverse a Stack using Recursion
+ * C Program to Reverse a Stack without using Recursion
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +12,7 @@ struct node
 
 void generate(struct node **);
 void display(struct node *);
-void stack_reverse(struct node **, struct node **);
+void stack_reverse(struct node **);
 void delete(struct node **);
 
 int main()
@@ -23,28 +23,46 @@ int main()
     printf("\nThe sequence of contents in stack\n");
     display(head);
     printf("\nInversing the contents of the stack\n");
-    if (head != NULL)
-    {
-        stack_reverse(&head, &(head->next));
-    }
+    stack_reverse(&head);
     printf("\nThe contents in stack after reversal\n");
     display(head);
     delete(&head);
-
     return 0;
 }
 
-void stack_reverse(struct node **head, struct node **head_next)
+void stack_reverse(struct node **head)
 {
-    struct node *temp;
+    struct node *temp, *prev;
 
-    if (*head_next != NULL)
+    if (*head == NULL)
     {
-         temp = (*head_next)->next;
-        (*head_next)->next = (*head);
-        *head = *head_next;
-        *head_next = temp;
-        stack_reverse(head, head_next);
+        printf("Stack does not exist\n");
+    }
+    else if ((*head)->next == NULL)
+    {
+        printf("Single node stack reversal brings no difference\n");
+    }
+    else if ((*head)->next->next == NULL)
+    {
+        (*head)->next->next = *head;
+        *head = (*head)->next;
+        (*head)->next->next = NULL;
+    }
+    else
+    {
+        prev = *head;
+        temp = (*head)->next;
+        *head = (*head)->next->next;
+        prev->next = NULL;
+        while ((*head)->next != NULL)
+        {
+            temp->next = prev;
+            prev = temp;
+            temp = *head;
+            *head = (*head)->next;
+        }
+        temp->next = prev;
+        (*head)->next = temp;
     }
 }
 
