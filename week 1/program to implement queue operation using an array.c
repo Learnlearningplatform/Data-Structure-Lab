@@ -13,6 +13,7 @@ Program Explanation
 6. Exit.
  */
 #include <stdio.h>
+#include<stdlib.h>
 
 #define MAX 50
 
