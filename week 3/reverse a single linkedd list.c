@@ -1,5 +1,22 @@
 /**
  * C program to reverse a Singly Linked List
+ Algorithm to reverse a Singly Linked List
+%%Input : head node of the linked list
+Begin:
+    If (head != NULL) then
+        prevNode ← head
+        head ← head.next
+        curNode ← head
+        prevNode.next ← NULL
+        While (head != NULL) do
+            head ← head.next
+            curNode.next ← prevNode
+            prevNode ← curNode
+            curNode ← head
+        End while
+        head ← prevNode
+    End if
+End
  */
 
 #include <stdio.h>
