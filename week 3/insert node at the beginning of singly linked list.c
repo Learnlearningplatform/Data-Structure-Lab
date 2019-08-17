@@ -1,5 +1,19 @@
 /**
  * C program to insert a new node at the beginning of a Singly Linked List
+ Algorithm to insert node at the beginning of Singly Linked List
+ Being:
+     createSinglyLinkedList (head)
+     alloc (newNode)
+     If (newNode == NULL) then
+         write ('Unable to allocate memory')
+     End if
+     Else then
+         read (data)wo
+         newNode.data ← data
+         newNode.next ← head
+         head ← newNode
+     End else
+ End
  */
 
 #include <stdio.h>
